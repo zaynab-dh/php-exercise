@@ -7,7 +7,5 @@ $width
 {
 echo "Area is : ".$height*$width;
 }
-calculateArea(
-5,3
-)
+calculateArea(5,3)
 ?>
