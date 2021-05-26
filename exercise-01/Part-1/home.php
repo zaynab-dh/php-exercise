@@ -6,25 +6,30 @@
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-        
+
 <?php
+if (isset($_POST['submit'])) {
+        $fullname = $_POST['fullname'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $confirm_password = $_POST['confirm_password'];
+        $email = $_POST['email'];
+        $phone = $_POST['phone'];
+        $date_of_birth = $_POST['date_of_birth'];
+        $social_security_number = $_POST['social_security_number'];
 $registration = array(
-    'fullname' => 'full admin',
-    'username' => 'admin',
-    'password' => '123456',
-    'email' => 'admin@email.com',
-    'phone' => '0123456',
-    'date_of_birth' => '1-1-2000',
-    'social_security_number' => '02020',
-);
-$fullname = isset($_POST['fullname']) ? strtolower($_POST['fullname']) : '';
-$username = isset($_POST['username']) ? strtolower($_POST['username']) : '';
-$password = isset($_POST['password']) ? $_POST['password'] : '';
-$confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : '';
-$email = isset($_POST['email']) ? $_POST['email'] : '';
-$phone = isset($_POST['phone']) ? $_POST['phone'] : '';
-$date_of_birth = isset($_POST['date_of_birth']) ? $_POST['date_of_birth'] : '';
-$social_security_number = isset($_POST['social_security_number']) ? $_POST['social_security_number'] : '';
+        "fullname" => $fullname,
+        "username" => $username,
+        "password" => $password ,
+        "email" => $email,
+        "phone" => $phone ,
+        "date_of_birth" => $date_of_birth,
+        "social_security_number" => $social_security_number,
+    );
+    foreach($registration as $key => $value){
+            echo `$key => $value`;
+    };
+}
 
 // if ( isset($registration[$username]) or isset($registration[$email]))
 // {
@@ -32,13 +37,14 @@ $social_security_number = isset($_POST['social_security_number']) ? $_POST['soci
 
 // }
 
-function display()
-{
-    echo "hello " . $_POST["username"];
-}
-if (isset($_POST['submit'])) {
-    display();
-}
+// function display()
+// {
+//     echo "hello " . $_POST["username"];
+
+// }
+// if (isset($_POST['submit'])) {
+//     display();
+// }
 
 // $logins = array(
 //         'username1' => 'password1',
@@ -59,7 +65,7 @@ if (isset($_POST['submit'])) {
 <div class="form1">
 <div class="form">
 <h1>Registration</h1>
-<form name="registration" action="safe.php" method="post">
+<form name="registration" action="" method="post">
 <input type="text" name="fullname" placeholder="Full Name" required />
 <input type="text" name="username" placeholder="Username" required />
 <input type="password" name="password" placeholder="Password" required />

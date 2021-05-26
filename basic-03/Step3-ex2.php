@@ -24,7 +24,7 @@ for($i = 0; $i < count($transactions); $i++) {
 ?>
 
 
-<?php
+
 
 $transactions = array(
     array(
@@ -44,4 +44,4 @@ $keys = array_keys($transactions);
 for($i = 0; $i < count($transactions); $i++) {
     foreach($transactions[$keys[$i]] as $key => $value) {
         echo $key . " : " . $value . "<br>";
-}
+} 
