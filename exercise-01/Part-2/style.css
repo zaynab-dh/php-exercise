@@ -1,0 +1,21 @@
+body{
+    /* background-color: lightblue; */
+    /* text-align: center; */
+}
+
+table {
+    margin: auto;
+    border: 5px solid gray;
+}
+
+table, th, td {
+    /* border: 1px solid navy; */
+    background-color: navy;
+    color:white;
+  }
+
+td {
+    width: 250px;
+    height: 50px;
+    text-align: center;
+}
